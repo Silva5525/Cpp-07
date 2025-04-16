@@ -6,7 +6,7 @@
 /*   By: wdegraf <wdegraf@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:15:10 by wdegraf           #+#    #+#             */
-/*   Updated: 2024/12/09 16:02:52 by wdegraf          ###   ########.fr       */
+/*   Updated: 2025/04/16 15:03:00 by wdegraf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	floatIt(int& i)
 	std::cout << static_cast<float>(i) << " ";
 }
 
+
+
 /// @brief main function to test iter. Prints array of int then convert
 /// it to an array of float and print that. Then print an array of strings.
 int	main(void)
@@ -38,7 +40,7 @@ int	main(void)
 	std::size_t len = sizeof(arr) / sizeof(arr[0]);
 	
 	std::cout << "int array: ";
-	iter(arr, len, printIt);
+	iter(arr, len, printIt<const int&>);
 
 	std::cout << "\nfloat array: ";
 	iter(arr, len, floatIt);
@@ -47,7 +49,7 @@ int	main(void)
 	len = sizeof(str) / sizeof(str[0]);
 	
 	std::cout << "\nprint string array: ";
-	iter(str, len, printIt);
+	iter(str, len, printIt<std::string&>);
 	std::cout << std::endl;
 	
 	return (0);

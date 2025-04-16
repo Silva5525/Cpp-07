@@ -6,7 +6,7 @@
 /*   By: wdegraf <wdegraf@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:15:01 by wdegraf           #+#    #+#             */
-/*   Updated: 2024/12/09 16:05:34 by wdegraf          ###   ########.fr       */
+/*   Updated: 2025/04/16 14:58:47 by wdegraf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 /// @param array of any type.
 /// @param len length of the array.
 /// @param f function to apply to each element.
-template <typename T>
-void	iter(T* array, std::size_t len, void (*f)(T&))
+template <typename T, typename F>
+void	iter(T* array, std::size_t len, F f)
 {
 	for (std::size_t i = 0; i < len; i++)
 		f(array[i]);
